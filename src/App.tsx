@@ -6,6 +6,7 @@ import Message from './components/Message'
 import Gallery from './components/Gallery'
 import Appreciation from './components/Appreciation'
 import Finale from './components/Finale'
+import Music from './components/Music'
 import { useReveal } from './useReveal'
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
   return (
     <>
       <Petals />
+      {opened && <Music />}
       {!opened && <Opening onOpen={() => setOpened(true)} />}
       <main className={opened ? 'site is-open' : 'site'} aria-hidden={!opened}>
         <Hero />
