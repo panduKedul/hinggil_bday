@@ -5,6 +5,8 @@ import Hero from './components/Hero'
 import Message from './components/Message'
 import Gallery from './components/Gallery'
 import Appreciation from './components/Appreciation'
+import Game from './components/Game'
+import Wishes from './components/Wishes'
 import Finale from './components/Finale'
 import Music from './components/Music'
 import { useReveal } from './useReveal'
@@ -47,7 +49,9 @@ export default function App() {
         <Hero />
         <Message />
         <Gallery />
+        <Game />
         <Appreciation />
+        <Wishes />
         <Finale />
       </main>
     </>

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { gallery } from '../photos'
+import { gallery, her, us, type Photo } from '../photos'
 
 export default function Gallery() {
   const [open, setOpen] = useState<number | null>(null)
@@ -21,26 +21,29 @@ export default function Gallery() {
     return () => window.removeEventListener('keydown', onKey)
   }, [open, close, step])
 
+  const tile = (p: Photo, i: number) => (
+    <button
+      key={p.src}
+      className="polaroid reveal"
+      style={{ ['--tilt' as string]: `${((i % 5) - 2) * 0.9}deg` }}
+      onClick={() => setOpen(i)}
+      aria-label={`Perbesar foto: ${p.caption}`}
+    >
+      <img src={p.src} width={p.w} height={p.h} alt={p.alt} loading="lazy" decoding="async" />
+      <span>{p.caption}</span>
+    </button>
+  )
+
   const cur = open === null ? null : gallery[open]
 
   return (
     <section className="section gallery" id="kenangan">
       <p className="eyebrow reveal">Kenangan manis</p>
       <h2 className="script reveal d1">Potongan hari-hari kita</h2>
-      <div className="masonry">
-        {gallery.map((p, i) => (
-          <button
-            key={p.src}
-            className="polaroid reveal"
-            style={{ ['--tilt' as string]: `${((i % 5) - 2) * 0.9}deg` }}
-            onClick={() => setOpen(i)}
-            aria-label={`Perbesar foto: ${p.caption}`}
-          >
-            <img src={p.src} width={p.w} height={p.h} alt={p.alt} loading="lazy" decoding="async" />
-            <span>{p.caption}</span>
-          </button>
-        ))}
-      </div>
+      <h3 className="sub reveal">Kamu, apa adanya</h3>
+      <div className="masonry">{her.map((p, i) => tile(p, i))}</div>
+      <h3 className="sub reveal">Kita</h3>
+      <div className="masonry">{us.map((p, i) => tile(p, her.length + i))}</div>
 
       {cur && (
         <div className="lightbox" role="dialog" aria-modal="true" aria-label="Foto diperbesar" onClick={close}>
