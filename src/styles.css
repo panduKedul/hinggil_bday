@@ -182,6 +182,8 @@ footer { margin-top: 5rem; font-size: .85rem; color: var(--brown); opacity: .8; 
   .petals { display: none; }
 }
 
-.music { position: fixed; left: 16px; bottom: 16px; z-index: 60; display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 18px 0 8px; border: 0; border-radius: 999px; background: rgba(255, 253, 252, .92); color: var(--dusty); font-weight: 600; box-shadow: 0 8px 24px rgba(199, 125, 145, .35); }
+.music-wrap { position: fixed; left: 16px; bottom: 16px; z-index: 60; width: min(352px, calc(100vw - 32px)); display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.music-embed { border: 0; border-radius: 14px; box-shadow: 0 8px 24px rgba(199, 125, 145, .35); animation: fade .3s; }
+.music { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 18px 0 8px; border: 0; border-radius: 999px; background: rgba(255, 253, 252, .92); color: var(--dusty); font-weight: 600; box-shadow: 0 8px 24px rgba(199, 125, 145, .35); }
 .music i { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, var(--blush), var(--rose)); color: #fff; font-style: normal; }
 .music.on i { animation: float 2s ease-in-out infinite; }

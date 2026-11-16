@@ -1,36 +1,27 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 
-const files = import.meta.glob('../assets/music/*.{mp3,m4a,ogg}', {
-  eager: true,
-  query: '?url',
-  import: 'default',
-}) as Record<string, string>
-
-const src = Object.values(files)[0]
+const TRACK_ID = '4kX7xkopoXZCfE1D6fNwl2'
 
 export default function Music() {
-  const ref = useRef<HTMLAudioElement>(null)
-  const [on, setOn] = useState(false)
-
-  if (!src) return null
-
-  const toggle = () => {
-    const a = ref.current
-    if (!a) return
-    if (a.paused) a.play().then(() => setOn(true)).catch(() => setOn(false))
-    else {
-      a.pause()
-      setOn(false)
-    }
-  }
+  const [open, setOpen] = useState(false)
 
   return (
-    <>
-      <audio ref={ref} src={src} loop preload="none" />
-      <button className={on ? 'music on' : 'music'} onClick={toggle} aria-pressed={on} aria-label={on ? 'Jeda musik' : 'Putar musik'}>
-        <i aria-hidden="true">{on ? '❚❚' : '♪'}</i>
-        {on ? 'Jeda' : 'Putar musik'}
+    <div className="music-wrap">
+      {open && (
+        <iframe
+          className="music-embed"
+          title="Honeybee - Olivia Rodrigo"
+          src={`https://open.spotify.com/embed/track/${TRACK_ID}?utm_source=generator&theme=0`}
+          width="100%"
+          height="152"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        />
+      )}
+      <button className={open ? 'music on' : 'music'} onClick={() => setOpen((o) => !o)} aria-expanded={open}>
+        <i aria-hidden="true">{open ? '✕' : '♪'}</i>
+        {open ? 'Tutup' : 'Putar musik'}
       </button>
-    </>
+    </div>
   )
 }
