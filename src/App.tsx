@@ -7,6 +7,7 @@ import Gallery from './components/Gallery'
 import Appreciation from './components/Appreciation'
 import Game from './components/Game'
 import Wishes from './components/Wishes'
+import Roadmap from './components/Roadmap'
 import Finale from './components/Finale'
 import Music from './components/Music'
 import { useReveal } from './useReveal'
@@ -52,6 +53,7 @@ export default function App() {
         <Game />
         <Appreciation />
         <Wishes />
+        <Roadmap />
         <Finale />
       </main>
     </>
