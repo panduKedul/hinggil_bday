@@ -3,14 +3,14 @@ import { useState } from 'react'
 interface Stop { year: number; place: string; where: string; note: string }
 
 const stops: Stop[] = [
-  { year: 2028, place: 'Yogyakarta', where: 'Indonesia', flag: '🇮🇩', note: 'Pelan-pelan keliling kota, jajan di sepanjang jalan, dan lihat matahari terbit dari Borobudur.' },
-  { year: 2028, place: 'Labuan Bajo', where: 'Indonesia', flag: '🇮🇩', note: 'Berlayar di antara pulau-pulau, melihat sunset dari Pulau Padar.' },
-  { year: 2029, place: 'Bali', where: 'Indonesia', flag: '🇮🇩', note: 'Pantai, sawah bertingkat, dan malam tenang tanpa terburu-buru.' },
-  { year: 2029, place: 'Raja Ampat', where: 'Indonesia', flag: '🇮🇩', note: 'Laut paling jernih yang pernah ada, hanya berdua dan langit luas.' },
-  { year: 2030, place: 'Kyoto dan Tokyo', where: 'Jepang', flag: '🇯🇵', note: 'Jalan kaki di antara gerbang torii, lalu keliling lampu kota yang tidak pernah tidur.' },
-  { year: 2031, place: 'Seoul dan Pulau Jeju', where: 'Korea Selatan', flag: '🇰🇷', note: 'Kafe kecil, jalan malam, dan hamparan bunga di Jeju.' },
-  { year: 2032, place: 'Cappadocia dan Istanbul', where: 'Turki', flag: '🇹🇷', note: 'Balon udara saat fajar, lalu secangkir teh di tepi Bosphorus.' },
-  { year: 2033, place: 'Swiss dan Paris', where: 'Eropa', flag: '🇨🇭', note: 'Pegunungan bersalju, kereta panoramik, dan satu foto di depan menara itu.' },
+  { year: 2028, place: 'Yogyakarta', where: 'Indonesia', note: 'Pelan-pelan keliling kota, jajan di sepanjang jalan, dan lihat matahari terbit dari Borobudur.' },
+  { year: 2028, place: 'Labuan Bajo', where: 'Indonesia', note: 'Berlayar di antara pulau-pulau, melihat sunset dari Pulau Padar.' },
+  { year: 2029, place: 'Bali', where: 'Indonesia', note: 'Pantai, sawah bertingkat, dan malam tenang tanpa terburu-buru.' },
+  { year: 2029, place: 'Raja Ampat', where: 'Indonesia', note: 'Laut paling jernih yang pernah ada, hanya berdua dan langit luas.' },
+  { year: 2030, place: 'Kyoto dan Tokyo', where: 'Jepang', note: 'Jalan kaki di antara gerbang torii, lalu keliling lampu kota yang tidak pernah tidur.' },
+  { year: 2031, place: 'Seoul dan Pulau Jeju', where: 'Korea Selatan', note: 'Kafe kecil, jalan malam, dan hamparan bunga di Jeju.' },
+  { year: 2032, place: 'Cappadocia dan Istanbul', where: 'Turki', note: 'Balon udara saat fajar, lalu secangkir teh di tepi Bosphorus.' },
+  { year: 2033, place: 'Swiss dan Paris', where: 'Eropa', note: 'Pegunungan bersalju, kereta panoramik, dan satu foto di depan menara itu.' },
 ]
 
 export default function Roadmap() {
