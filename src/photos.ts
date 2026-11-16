@@ -13,6 +13,8 @@ import p11 from './assets/photos/p11.webp'
 import p12 from './assets/photos/p12.webp'
 import p13 from './assets/photos/p13.webp'
 import p15 from './assets/photos/p15.webp'
+import p16 from './assets/photos/p16.webp'
+import p17 from './assets/photos/p17.webp'
 
 export interface Photo { src: string; w: number; h: number; caption: string; alt: string }
 
@@ -36,6 +38,8 @@ export const us: Photo[] = [
   { src: p05, w: 1050, h: 1400, caption: 'Dua wajah, satu frame', alt: 'Selfie berdua, Inggil tersenyum di sisi kanan' },
   { src: p06, w: 788, h: 1400, caption: 'Hari yang hangat', alt: 'Selfie berdua dari dekat' },
   { src: p15, w: 788, h: 1400, caption: 'Dekat itu nyaman', alt: 'Selfie berdua dari dekat di tempat gelap' },
+  { src: p16, w: 646, h: 1400, caption: 'Berdua lewat layar', alt: 'Tangkapan layar video call berdua' },
+  { src: p17, w: 1050, h: 1400, caption: 'Tenang di sampingmu', alt: 'Selfie berdua, Inggil memejamkan mata' },
 ]
 
 export const gallery: Photo[] = [...her, ...us]
