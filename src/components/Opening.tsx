@@ -6,7 +6,7 @@ export default function Opening({ onOpen }: { onOpen: () => void }) {
 
   const open = () => {
     setLeaving(true)
-    window.setTimeout(onOpen, 900)
+    onOpen()
   }
 
   return (
