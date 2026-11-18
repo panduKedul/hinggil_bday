@@ -236,3 +236,28 @@ footer { margin-top: 5rem; font-size: .85rem; color: var(--brown); opacity: .8; 
 .music { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 18px 0 8px; border: 0; border-radius: 999px; background: rgba(255, 253, 252, .92); color: var(--dusty); font-weight: 600; box-shadow: 0 8px 24px rgba(199, 125, 145, .35); }
 .music i { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, var(--blush), var(--rose)); color: #fff; font-style: normal; }
 .music.on i { animation: float 2s ease-in-out infinite; }
+
+/* halaman surat (/surat) */
+.surat-lead { margin-left: auto; margin-right: auto; text-align: center; }
+.envelopes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 640px; margin: 2rem auto 0; }
+.env-btn { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 22px 10px 18px; border: 1px solid rgba(244, 175, 196, .45); border-radius: 18px; background: rgba(255, 253, 252, .9); box-shadow: 0 10px 26px rgba(199, 125, 145, .15); color: var(--dusty); transition: transform .25s, box-shadow .25s, opacity .9s; }
+.env-btn:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(199, 125, 145, .3); }
+.env-btn:focus-visible { outline: 3px solid var(--dusty); outline-offset: 3px; }
+.env-btn.read { opacity: .75; }
+.env-mini { position: relative; width: 84px; height: 58px; border-radius: 5px; background: linear-gradient(160deg, var(--warm-white), #fbe3ec); box-shadow: 0 6px 16px rgba(199, 125, 145, .25); }
+.env-mini-flap { position: absolute; inset: 0 0 auto 0; height: 32px; background: #f9d6e4; clip-path: polygon(0 0, 100% 0, 50% 100%); border-radius: 5px 5px 0 0; }
+.env-mini-seal { position: absolute; left: 50%; top: 22px; transform: translateX(-50%); width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%; background: var(--rose); color: #fff; font-size: .7rem; }
+.env-label { font-family: var(--serif); font-style: italic; font-size: 1.2rem; }
+.letter-back { overflow-y: auto; align-items: center; }
+.letter { position: relative; width: min(92vw, 560px); max-height: 88svh; overflow-y: auto; animation: fade .4s; }
+.letter .lb-close { top: 10px; right: 10px; color: var(--dusty); box-shadow: 0 2px 8px rgba(0, 0, 0, .12); }
+.letter .script { padding: 0 36px; text-align: center; }
+.surat-end { text-align: center; }
+@media (max-width: 560px) {
+  .envelopes { gap: 12px; }
+  .env-mini { width: 66px; height: 46px; }
+  .env-mini-flap { height: 25px; }
+  .env-mini-seal { top: 16px; width: 18px; height: 18px; }
+  .env-label { font-size: 1.05rem; }
+}
+.surat footer { text-align: center; padding-bottom: 32px; }
