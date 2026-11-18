@@ -285,3 +285,4 @@ footer { margin-top: 5rem; font-size: .85rem; color: var(--brown); opacity: .8; 
   .wps { gap: 14px; }
   .wp figcaption { flex-direction: column; gap: 6px; font-size: 1rem; }
 }
+.env-label { text-align: center; line-height: 1.15; font-size: 1.3rem; }

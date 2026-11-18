@@ -7,31 +7,33 @@ export type Surat = { dari: string; judul: string; isi: string[]; ttd: string; n
 
 export const SURAT: Surat[] = [
   {
-    dari: 'Mama',
+    dari: 'Mama Pandu',
     judul: 'Surat dari Mama',
     isi: [
       'Nak Hinggil,',
-      'Mama nulis ini sambil senyum-senyum sendiri, soalnya bingung mau mulai dari mana. Dua puluh tahun itu rasanya cepat sekali. Kayaknya baru kemarin Mama masih sering menyisir rambutmu, sekarang kamu sudah punya urusan sendiri, cita-cita sendiri, dan orang yang kamu pilih sendiri.',
-      'Yang pertama, Mama mau bilang terima kasih. Terima kasih sudah tumbuh jadi anak yang tahu diri tapi nggak minder. Mama tahu ada hal-hal yang kamu simpan sendiri biar Mama nggak kepikiran. Mama sebenarnya tahu, Nak. Mama diam bukan karena nggak peduli, Mama cuma nunggu kamu siap cerita. Kalau nanti ada yang berat, pintu rumah ini tetap terbuka, jam berapa pun.',
-      'Soal Pandu, Mama sudah lihat sendiri bagaimana dia memperlakukan kamu. Mama nggak minta dia sempurna, nggak ada orang yang sempurna, Mama sama Bapak juga masih belajar sampai sekarang. Mama cuma minta dia jujur, sabar, dan mau pulang ke kamu walaupun lagi capek atau lagi kesal. Kalau itu dia jaga, sisanya bisa dikerjakan pelan-pelan bersama.',
-      'Ke kamu juga Mama pesan, jangan merasa harus selalu kuat. Kalau capek, bilang. Kalau nggak setuju, bicarakan baik-baik, jangan dipendam sampai jadi besar. Rumah tangga itu isinya banyak ngobrol dan banyak ngalah di waktu yang tepat. Kadang kamu yang ngalah, kadang dia. Yang penting jangan ada yang merasa sendirian.',
-      'Mama doakan kamu sehat, badan dan hatinya. Mama doakan rezekimu cukup dan lapang, kerjaanmu lancar, sukses dunia akhirat, dan kalau Tuhan mengizinkan, kamu sama Pandu dipertemukan sampai ke pelaminan dan terus sampai tua. Mama doakan kalian dijauhkan dari orang yang niatnya nggak baik, dan didekatkan sama orang-orang yang tulus. Kalau suatu hari kalian diuji, semoga kalian ingat bahwa dulu kalian pernah saling memilih, dan itu cukup untuk mulai lagi.',
-      'Selamat ulang tahun, anak Mama. Jaga diri baik-baik, makan yang teratur, jangan begadang terus. Mama sayang kamu, dari dulu, sekarang, dan seterusnya.',
+      'Mama nulis ini sambil senyum-senyum sendiri, soalnya bingung mau mulai dari mana. Mama bukan orang yang pandai merangkai kata, jadi maaf kalau nanti bahasanya biasa saja. Yang penting isinya dari hati.',
+      'Selamat ulang tahun yang ke-20, ya, Nak. Dua puluh tahun itu umur yang bagus. Sudah cukup dewasa buat mikir ke depan, tapi masih banyak waktu buat belajar dan mencoba. Mama senang kamu ada di umur ini dengan sehat dan dengan hati yang baik.',
+      'Mama mau bilang terima kasih. Terima kasih sudah mau berjalan bersama Pandu dan sabar menghadapi dia. Namanya anak laki-laki, pasti ada saja kurangnya. Kalau suatu hari dia bikin kamu kesal atau kecewa, bilang saja ke Mama. Mama yang membesarkan dia, jadi Mama nggak akan sungkan menegur. Kamu nggak perlu merasa sendirian di keluarga ini.',
+      'Mama dan Bapak sudah menganggap kamu bagian dari keluarga kami. Jadi kalau kamu butuh apa-apa, atau cuma pengin cerita, jangan sungkan. Pintu kami terbuka buat kamu.',
+      'Pesan Mama untuk kalian berdua, jangan gampang menyerah kalau jalannya lagi nggak enak. Semua pasangan pasti ada masa susahnya. Yang bikin kuat itu mau duduk bareng, ngobrol, dan saling mengalah di waktu yang pas. Jangan dipendam sendiri, apalagi sampai jadi besar.',
+      'Mama doakan kamu sehat, badan dan hatinya. Mama doakan rezekimu cukup dan lapang, kuliah dan kerjaanmu lancar, sukses dunia akhirat. Mama doakan kamu sama Pandu dijaga dari orang-orang yang niatnya nggak baik, dan didekatkan sama orang-orang yang tulus. Dan kalau Tuhan mengizinkan, semoga kalian diberi jalan sampai ke pelaminan dan terus bersama sampai tua.',
+      'Selamat ulang tahun sekali lagi, Nak. Jaga kesehatan, makan yang teratur, jangan begadang terus. Mama sayang sama kamu.',
     ],
     ttd: 'Mama',
     nama: 'Wiwik Megawati Putri',
   },
   {
-    dari: 'Bapak',
+    dari: 'Bapak Pandu',
     judul: 'Surat dari Bapak',
     isi: [
-      'Nak,',
-      'Bapak ini nggak pandai nulis, apalagi yang begini. Sudah beberapa kali Bapak mulai terus berhenti. Mamamu bilang tulis saja seperti Bapak ngomong, ya sudah, begini saja.',
-      'Dua puluh tahun lalu Bapak cuma mikir satu hal: semoga hidupnya nanti nggak susah. Sampai sekarang pikiran itu masih sama. Bedanya, sekarang Bapak sadar hidup memang nggak pernah benar-benar mudah, dan tugas Bapak bukan menyingkirkan semua kesulitanmu, tapi memastikan kamu punya bekal buat menghadapinya. Kalau lihat kamu sekarang, Bapak merasa bekal itu sudah ada. Kamu kuat, kamu mau usaha, dan kamu nggak gampang menyerah. Bapak bangga sama kamu, walaupun Bapak jarang bilang.',
-      'Sekarang ada Pandu. Bapak nggak minta macam-macam. Bapak cuma minta satu: jaga anak Bapak. Jangan sampai dia menangis karena hal yang sebenarnya bisa dibicarakan. Kalau salah, mengaku. Kalau belum punya banyak, nggak apa-apa, yang penting mau kerja dan mau jujur. Rezeki itu datangnya ke orang yang mau jalan, bukan yang cuma menunggu.',
-      'Buat kamu, Nak, pesan Bapak sederhana. Jangan buru-buru, tapi jangan ragu juga kalau memang sudah yakin. Ambil keputusan yang bisa kamu pertanggungjawabkan sendiri. Kalau nanti ternyata keliru, Bapak tetap di belakangmu. Itu nggak akan berubah.',
+      'Nak Hinggil,',
+      'Bapak ini nggak pandai nulis, apalagi yang begini. Sudah beberapa kali Bapak mulai terus berhenti. Mama bilang tulis saja seperti Bapak ngomong, ya sudah, begini saja.',
+      'Pertama, selamat ulang tahun. Dua puluh tahun. Semoga sehat terus dan diberi umur yang panjang.',
+      'Bapak tahu kamu dan Pandu sedang berjalan bersama. Bapak nggak mau ikut campur terlalu banyak, itu urusan kalian. Tapi Bapak mau kamu tahu satu hal: Bapak dan Mama sudah menerima kamu dengan baik. Kamu nggak perlu merasa harus membuktikan apa-apa ke kami. Kamu datang ke keluarga ini dengan niat baik, dan itu sudah cukup.',
+      'Bapak sudah berpesan ke Pandu, jaga kamu. Hormati kamu. Jangan membuat kamu menangis karena hal yang sebenarnya bisa dibicarakan. Kalau dia salah, dia harus mengaku. Kalau belum punya banyak, nggak apa-apa, yang penting mau kerja dan mau jujur. Rezeki itu datangnya ke orang yang mau jalan, bukan yang cuma menunggu. Kalau Pandu lalai, bilang ke Bapak.',
+      'Buat kamu, Nak, pesan Bapak sederhana. Jangan buru-buru, tapi jangan ragu juga kalau memang sudah yakin. Ambil keputusan yang bisa kamu pertanggungjawabkan sendiri. Dan jangan lupa orang tuamu sendiri, tetap hormati dan kabari mereka.',
       'Doa Bapak juga sederhana. Semoga kamu sehat. Semoga rezekimu cukup dan datang dari jalan yang baik. Semoga kamu sama Pandu dikasih kesabaran, umur panjang, dan rumah yang tenang. Semoga kalau ada masalah, kalian selesaikan berdua tanpa perlu ada yang pergi. Dan semoga Bapak masih diberi umur untuk melihat kalian bahagia.',
-      'Selamat ulang tahun, Nak. Makan yang cukup, istirahat, jangan lupa berdoa. Kalau ada apa-apa, kabari Bapak.',
+      'Sekali lagi, selamat ulang tahun. Jaga diri baik-baik.',
     ],
     ttd: 'Bapak',
     nama: 'I Made Budi Artha',
@@ -45,7 +47,7 @@ export const SURAT: Surat[] = [
       'Aku mau mulai dari terima kasih. Terima kasih sudah mau berjalan sama aku sejauh ini, padahal aku tahu aku bukan orang yang gampang. Kamu sabar sama aku, kamu dengarkan ceritaku bahkan waktu aku sendiri belum rapi menyampaikannya. Banyak hal baik di hidupku sekarang yang mulainya dari kamu, dan kadang aku lupa bilang itu.',
       'Aku suka caramu menjalani hidup. Kamu berusaha, kamu berdiri di kakimu sendiri, dan kamu tetap lembut sama orang-orang di sekitarmu. Kamu nggak pernah pamer soal itu, tapi aku memperhatikan. Kalau suatu hari kamu lagi capek dan bilang "nggak apa-apa", aku mau kamu tahu kamu boleh bilang "aku capek" ke aku. Aku nggak akan menganggap itu lemah.',
       'Aku jujur ya: aku nggak punya semuanya. Jalan kita ke depan masih banyak yang belum jelas, dan mungkin ada waktunya kita harus mulai dari nol, atau dari yang lebih rendah dari itu. Aku nggak takut, karena yang aku butuhkan ada di sebelahku. Yang bisa aku janjikan bukan hidup tanpa masalah. Yang aku janjikan, aku mau berusaha, aku mau belajar jadi lebih baik, dan aku nggak akan membiarkan kamu menghadapinya sendirian.',
-      'Mama dan Bapak sudah percaya sama aku buat menjagamu, dan aku anggap itu amanah yang besar. Aku nggak mau mengecewakan mereka, dan yang paling penting, aku nggak mau mengecewakan kamu.',
+      'Mama dan Bapak juga menyayangimu, dan aku bersyukur kamu diterima dengan baik di keluargaku. Aku ingin jadi laki-laki yang bikin mereka, dan keluargamu, yakin bahwa kamu nggak salah memilih. Aku nggak mau mengecewakan mereka, dan yang paling penting, aku nggak mau mengecewakan kamu.',
       'Doaku buat kamu di umur yang baru: semoga kamu sehat, semoga kamu lebih sering tertawa lepas, semoga cita-citamu satu-satu terkabul, dan semoga kamu selalu merasa cukup. Semoga hal-hal yang kamu pendam pelan-pelan bisa kamu ceritakan. Dan kalau Tuhan mengizinkan, semoga kita diberi jalan untuk bersama sampai tua. Aku akan ada di situ, ikut senang waktu kamu berhasil, dan ikut bantu waktu kamu jatuh.',
       'Aku sayang kamu, Hinggil. Terima kasih sudah jadi perempuan yang selama ini ingin aku temukan.',
     ],
@@ -70,5 +72,5 @@ export const VIDEO_PEMBUKA = 'Ada yang ingin menyampaikan langsung. Putar, atau 
 export type Video = { dari: string; file: string; poster: string }
 
 export const VIDEO: Video[] = [
-  { dari: 'Mama', file: '/video/Ucapan-Mama.mp4', poster: '/video/Ucapan-Mama-poster.jpg' },
+  { dari: 'Mama Pandu', file: '/video/Ucapan-Mama.mp4', poster: '/video/Ucapan-Mama-poster.jpg' },
 ]
