@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Petals from './components/Petals'
+import Music from './components/Music'
 import { NAME } from './config'
 import { useReveal } from './useReveal'
+import song from './assets/music/segalanya-itu-kamu.mp3'
 import {
   SURAT, SURAT_JUDUL, SURAT_PEMBUKA, SURAT_PENUTUP,
   WALLPAPER, WALLPAPER_JUDUL, WALLPAPER_PEMBUKA,
@@ -12,6 +14,35 @@ export default function SuratPage() {
   const [open, setOpen] = useState<number | null>(null)
   const [read, setRead] = useState<number[]>([])
   const [wp, setWp] = useState<number | null>(null)
+  const [playing, setPlaying] = useState(false)
+  const audio = useRef<HTMLAudioElement>(null)
+
+  const play = () => audio.current?.play().then(() => setPlaying(true)).catch(() => setPlaying(false))
+
+  const toggle = () => {
+    const a = audio.current
+    if (!a) return
+    if (a.paused) play()
+    else {
+      a.pause()
+      setPlaying(false)
+    }
+  }
+
+  // Browser memblokir autoplay, jadi musik mulai di ketukan pertama.
+  useEffect(() => {
+    const first = (e: Event) => {
+      window.removeEventListener('click', first)
+      if (!(e.target as HTMLElement).closest('.music')) play()
+    }
+    window.addEventListener('click', first)
+    return () => window.removeEventListener('click', first)
+  }, [])
+
+  const pauseForVideo = () => {
+    audio.current?.pause()
+    setPlaying(false)
+  }
 
   useReveal(true)
 
@@ -46,6 +77,8 @@ export default function SuratPage() {
   return (
     <>
       <Petals />
+      <audio ref={audio} src={song} loop preload="none" />
+      <Music playing={playing} onToggle={toggle} />
       <main className="site is-open surat">
         <section className="section">
           <p className="eyebrow reveal">Untuk {NAME}</p>
@@ -79,7 +112,7 @@ export default function SuratPage() {
             <div className="videos">
               {VIDEO.map((v) => (
                 <figure key={v.file} className="vid reveal">
-                  <video controls playsInline preload="metadata" poster={v.poster} src={v.file} />
+                  <video controls playsInline preload="metadata" poster={v.poster} src={v.file} onPlay={pauseForVideo} />
                   <figcaption>
                     <span>Ucapan dari {v.dari}</span>
                     <a className="btn ghost small" href={v.file} download>
