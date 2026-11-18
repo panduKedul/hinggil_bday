@@ -261,3 +261,27 @@ footer { margin-top: 5rem; font-size: .85rem; color: var(--brown); opacity: .8; 
   .env-label { font-size: 1.05rem; }
 }
 .surat footer { text-align: center; padding-bottom: 32px; }
+
+/* surat: nama pengirim, video, wallpaper */
+.env-from { margin-top: -4px; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--brown); }
+.env-label { margin-top: -8px; font-style: normal; font-size: 1.5rem; font-weight: 600; }
+.letter .sign { font-style: normal; font-family: var(--script); font-size: 2rem; color: var(--rose); margin: 1.6rem 0 0; }
+.letter .sign small { display: block; margin-top: 2px; font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--brown); }
+.letter p { text-align: left; }
+.extra { padding-top: clamp(40px, 8vw, 80px); }
+.btn.small { padding: .55rem 1.2rem; min-height: 40px; font-size: .9rem; }
+.videos { display: grid; gap: 22px; justify-items: center; margin-top: 1.4rem; }
+.vid { margin: 0; width: min(100%, 320px); padding: 12px 12px 14px; background: var(--warm-white); border-radius: 18px; box-shadow: 0 14px 36px rgba(199, 125, 145, .25); border: 1px solid rgba(244, 175, 196, .4); }
+.vid video { width: 100%; max-height: 62svh; border-radius: 12px; background: #000; }
+.vid figcaption, .wp figcaption { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 12px; font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: var(--brown); }
+.wps { display: grid; grid-template-columns: repeat(2, minmax(0, 260px)); justify-content: center; gap: 22px; margin-top: 1.4rem; }
+.wp { margin: 0; }
+.wp-img { display: block; width: 100%; padding: 8px; border: 0; background: var(--warm-white); border-radius: 18px; box-shadow: 0 14px 36px rgba(199, 125, 145, .25); transition: transform .3s; }
+.wp-img:hover { transform: translateY(-4px); }
+.wp-img:focus-visible { outline: 3px solid var(--dusty); outline-offset: 3px; }
+.wp-img img { width: 100%; border-radius: 12px; }
+.lightbox figcaption .btn { margin-top: 6px; }
+@media (max-width: 560px) {
+  .wps { gap: 14px; }
+  .wp figcaption { flex-direction: column; gap: 6px; font-size: 1rem; }
+}

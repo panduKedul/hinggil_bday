@@ -2,11 +2,16 @@ import { useEffect, useState } from 'react'
 import Petals from './components/Petals'
 import { NAME } from './config'
 import { useReveal } from './useReveal'
-import { SURAT, SURAT_JUDUL, SURAT_PEMBUKA, SURAT_PENUTUP } from './suratData'
+import {
+  SURAT, SURAT_JUDUL, SURAT_PEMBUKA, SURAT_PENUTUP,
+  WALLPAPER, WALLPAPER_JUDUL, WALLPAPER_PEMBUKA,
+  VIDEO, VIDEO_JUDUL, VIDEO_PEMBUKA,
+} from './suratData'
 
 export default function SuratPage() {
   const [open, setOpen] = useState<number | null>(null)
   const [read, setRead] = useState<number[]>([])
+  const [wp, setWp] = useState<number | null>(null)
 
   useReveal(true)
 
@@ -14,12 +19,21 @@ export default function SuratPage() {
     document.title = `Surat untuk ${NAME}`
   }, [])
 
+  const modal = open !== null || wp !== null
   useEffect(() => {
-    if (open === null) return
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(null)
+    if (!modal) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return
+      setOpen(null)
+      setWp(null)
+    }
     window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [open])
+    document.body.style.overflow = 'hidden'
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      document.body.style.overflow = ''
+    }
+  }, [modal])
 
   const pick = (i: number) => {
     setOpen(i)
@@ -27,6 +41,7 @@ export default function SuratPage() {
   }
 
   const letter = open === null ? null : SURAT[open]
+  const wall = wp === null ? null : WALLPAPER[wp]
 
   return (
     <>
@@ -39,22 +54,65 @@ export default function SuratPage() {
           <div className="envelopes">
             {SURAT.map((s, i) => (
               <button
-                key={s.label}
+                key={s.dari}
                 className={read.includes(i) ? 'env-btn read reveal' : 'env-btn reveal'}
-                style={{ transitionDelay: `${i * 70}ms` }}
+                style={{ transitionDelay: `${i * 90}ms` }}
                 onClick={() => pick(i)}
-                aria-label={`Buka surat: ${s.judul}`}
+                aria-label={`Buka ${s.judul}`}
               >
                 <span className="env-mini" aria-hidden="true">
                   <span className="env-mini-flap" />
                   <span className="env-mini-seal">{read.includes(i) ? '✓' : '♥'}</span>
                 </span>
-                <span className="env-label">{s.label}</span>
+                <span className="env-from">dari</span>
+                <span className="env-label">{s.dari}</span>
               </button>
             ))}
           </div>
           {read.length === SURAT.length && <p className="amin-count surat-end">{SURAT_PENUTUP} ♥</p>}
         </section>
+
+        {VIDEO.length > 0 && (
+          <section className="section extra" id="video">
+            <h2 className="script reveal">{VIDEO_JUDUL}</h2>
+            <p className="hint reveal d1">{VIDEO_PEMBUKA}</p>
+            <div className="videos">
+              {VIDEO.map((v) => (
+                <figure key={v.file} className="vid reveal">
+                  <video controls playsInline preload="metadata" poster={v.poster} src={v.file} />
+                  <figcaption>
+                    <span>Ucapan dari {v.dari}</span>
+                    <a className="btn ghost small" href={v.file} download>
+                      Unduh video
+                    </a>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {WALLPAPER.length > 0 && (
+          <section className="section extra" id="wallpaper">
+            <h2 className="script reveal">{WALLPAPER_JUDUL}</h2>
+            <p className="hint reveal d1">{WALLPAPER_PEMBUKA}</p>
+            <div className="wps">
+              {WALLPAPER.map((w, i) => (
+                <figure key={w.file} className="wp reveal" style={{ transitionDelay: `${i * 90}ms` }}>
+                  <button className="wp-img" onClick={() => setWp(i)} aria-label={`Lihat ${w.nama}`}>
+                    <img src={w.thumb} alt={w.nama} loading="lazy" />
+                  </button>
+                  <figcaption>
+                    <span>{w.nama}</span>
+                    <a className="btn ghost small" href={w.file} download>
+                      Unduh
+                    </a>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        )}
         <footer>Dibuat dengan sepenuh hati, khusus untukmu.</footer>
       </main>
 
@@ -68,8 +126,27 @@ export default function SuratPage() {
             {letter.isi.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
-            <p className="sign">♥</p>
+            <p className="sign">
+              {letter.ttd}
+              {letter.nama && <small>{letter.nama}</small>}
+            </p>
           </div>
+        </div>
+      )}
+
+      {wall && (
+        <div className="lightbox" role="dialog" aria-modal="true" aria-label={wall.nama} onClick={() => setWp(null)}>
+          <figure onClick={(e) => e.stopPropagation()}>
+            <img src={wall.file} alt={wall.nama} />
+            <figcaption>
+              <a className="btn" href={wall.file} download>
+                Unduh {wall.nama}
+              </a>
+            </figcaption>
+          </figure>
+          <button className="lb-btn lb-close" onClick={() => setWp(null)} aria-label="Tutup">
+            ×
+          </button>
         </div>
       )}
     </>
